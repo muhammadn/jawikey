@@ -48,15 +48,6 @@ namespace :deploy do
       end
     end
   end
-
-  task :install_gems do
-    on roles(:app) do
-      within "#{deploy_to}/current" do
-        execute 'bundle install'
-      end
-    end
-  end
 end
 
-before "deploy:symlink:release", "deploy:install_gems"
 after "deploy:symlink:release", "deploy:update_jekyll"
