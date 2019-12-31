@@ -37,8 +37,7 @@ set :repo_url, "git@example.com:me/my_repo.git"
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
-set :rvm_ruby_string, 'ruby-2.5.0'
-set :scm, :git
+
 set :format, :pretty
 namespace :deploy do
   task :update_jekyll do

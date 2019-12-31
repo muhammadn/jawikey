@@ -20,6 +20,9 @@
 # role :app, %w{deploy@example.com}, my_property: :my_value
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
+role :app, %w{deploy@app.awesell.com}
+role :web, %w{deploy@app.awesell.com}
+role :db,  %w{deploy@app.awesell.com}
 
 
 
@@ -41,11 +44,11 @@
 #
 # Global options
 # --------------
-#  set :ssh_options, {
+  set :ssh_options, {
 #    keys: %w(/home/rlisowski/.ssh/id_rsa),
-#    forward_agent: false,
-#    auth_methods: %w(password)
-#  }
+    forward_agent: true,
+    auth_methods: %w(publickey)
+  }
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
